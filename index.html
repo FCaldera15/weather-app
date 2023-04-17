@@ -5,14 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Weather Forecast</title>
 </head>
 
 <body>
+    <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main class="container-fluid">
+        <section class="row">
+            <!--This shows the search textbox-->
+            <div class="col-4 col-md-4">
+                <div class="card">
+                    <h3 class="card-header text-uppercase">Search for a city</h3>
+                    <form id="user-form" class="card-body">
+                        <input id="user-search-input" type="text" placeholder="Enter a City Name"
+                            class="form-control" />
+                        <br />
+                        <div class="d-grid gap-2 pt-1 mt-1">
+                            <button type="button" class="d-grid gap-2 btn btn-dark col-md-12"
+                                id="search-button">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <!--Recent searches-->
+                <div class="search-history">
+                    <h5>Recent searches:</h5>
+                    <div id="recent-search"></div>
+                </div>
+            </div>
+            </div>
+            <!--Current weather on the top right side-->
+            <div class="col-7 currentweather">
+                <h3 class="cityName"></h3>
+                <p class="temp"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+            </div>
+        </section>
+
+        <!--Five days on the bottom right side-->
+        <section>
+            <h3 class="pl-3">5-Day Forecast</h3>
+
+            <div class="row fiveDay">
+            </div>
 
 
 
+        </section>
+    </main>
 
 
 
