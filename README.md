@@ -5,7 +5,7 @@
 This repository was made to help a new student like myself implement javascript elements like dayJS and API into the javascript.js file. 
 
 ## Link to Deployed Application 
-
+https://fcaldera15.github.io/weather-app/
 
 
 ## Installation
