@@ -4,7 +4,8 @@ var searchbtn = document.querySelector("#search-button");
 var userInput = document.querySelector("#user-search-input");
 var recentSearch = document.querySelector("#recent-search");
 var cityArrList = JSON.parse(localStorage.getItem("cities")) || [];
-var city = cityArrList[7] || "Dallas";
+console.log(cityArrList)
+// var city = cityArrList[7] || "";
 var cityName = document.querySelector(".cityName");
 var temp = document.querySelector(".temp");
 var wind = document.querySelector(".wind");
@@ -13,7 +14,11 @@ var fiveDayEl = document.querySelector(".fiveDay")
 
 //This shows the search button function
 searchbtn.addEventListener("click", () => {
-    weatherAPI(userInput.value);
+    var citySearch = userInput.value
+    cityArrList.push(citySearch);
+    console.log(cityArrList);
+    // localStorage.setItem("cities", cityArrList)
+    weatherAPI(citySearch);
 
 })
 
@@ -21,6 +26,7 @@ searchbtn.addEventListener("click", () => {
 
 // This shows the five days on the right side 
 function fiveDay(data) {
+    console.log(cityArrList)
     for (let i = 0; i < data.list.length; i += 8) {
         console.log(data.list[i])
         const html = `<div class="card col-2">
@@ -35,7 +41,9 @@ function fiveDay(data) {
 
 //This shows the current day on the top right side 
 function showWeather(data) {
+    // console.log(cityArrList)
     console.log(data)
+    console.log(data.cnt);
     cityName.textContent = data.city.name + ` ${data.list[0].dt_txt}`;
     temp.textContent = `Temp: ${data.list[0].main.temp} degrees`
     wind.textContent = `Wind: ${data.list[0].wind.speed} MPH`
@@ -45,11 +53,11 @@ function showWeather(data) {
 
 //Fetching the open weather data
 function weatherAPI(city) {
-
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}&units=imperial`)
+    console.log(cityArrList)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}&units=imperial`)
         .then(response => response.json())
         .then(data => {
-
+            console.log(data)
             showWeather(data);
             fiveDay(data);
             renderCity(data)
@@ -60,6 +68,7 @@ function weatherAPI(city) {
 
 //
 function renderCity(data) {
+    console.log(cityArrList)
     recentSearch.innerHTML = "";
     for (let i = 0; i < data.list.length; i++) {
         console.log(data);
