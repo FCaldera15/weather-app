@@ -1,0 +1,28 @@
+#recent-search {
+    display: grid;
+    width: 35%;
+}
+
+.currentweather {
+    height: 50%;
+}
+
+.row {
+    justify-content: center;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+.card{
+    background-color: lightslategrey;
+}
+
+.pl-3, .px-3 {
+    padding-left: 25rem!important;
+}
+
+.searchArea{
+    width: 20%;
+}

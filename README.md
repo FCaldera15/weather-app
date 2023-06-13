@@ -2,11 +2,11 @@
 
 ## Description
 
-This repository was made to help a new student like myself implement javascript elements like dayJS and API into the javascript.js file. 
+This repository was made to help a new student like myself implement javascript elements like dayJS and API into the javascript.js file.
 
-## Link to Deployed Application 
-https://fcaldera15.github.io/weather-app/git 
+## Link to Deployed Application
 
+https://fcaldera15.github.io/weather-app/git
 
 ## Installation
 
@@ -20,8 +20,8 @@ This application enables users to use this page as a weather forecast and find a
 
 This application features the API of the open weather website.
 
-## License 
+## License
 
 N/A
 
-![alt text](/Screenshot%20(11).png)
+![alt text](/weather.png)
